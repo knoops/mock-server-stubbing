@@ -29,7 +29,7 @@ public class MockServerApp {
 
 
         mockServerClient
-                .when(request().withPath("/keepalive"))
+                .when(request().withPath("/keepalive").withMethod("GET"))
                 .respond(response().withStatusCode(200).withBody("OK"));
     }
 }
