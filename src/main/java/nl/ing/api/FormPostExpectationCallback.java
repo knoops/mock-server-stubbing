@@ -20,7 +20,7 @@ public abstract class FormPostExpectationCallback implements ExpectationCallback
             for (String param : bodyString.split("&")){
                 String[] keyval = param.split("=");
                 String key = URLDecoder.decode(keyval[0]);
-                String val = URLDecoder.decode(keyval[1]);
+                String val = keyval.length > 1 ? URLDecoder.decode(keyval[1]) : "";
                 List<String> values = body.get(key);
                 if (values == null) {
                     values = new ArrayList<>();
