@@ -56,5 +56,10 @@ public class MockServerApp {
                                 "}")
                         )
         );
+
+
+        mockServerClient
+                .when(request().withPath("/keepalive"))
+                .respond(response().withStatusCode(200).withBody("OK"));
     }
 }
