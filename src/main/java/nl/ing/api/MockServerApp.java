@@ -1,7 +1,6 @@
 package nl.ing.api;
 
 import org.mockserver.client.server.MockServerClient;
-import org.mockserver.model.HttpClassCallback;
 
 import static org.mockserver.integration.ClientAndServer.startClientAndServer;
 import static org.mockserver.model.HttpClassCallback.callback;
@@ -25,7 +24,7 @@ public class MockServerApp {
                         .withPath("/2010-04-01/Accounts/.*/Calls.json")
                         .withMethod("POST")
         ).callback(
-                new CallCollectionMock()
+                new CreateCallMock(mockServerClient)
         );
 
 
